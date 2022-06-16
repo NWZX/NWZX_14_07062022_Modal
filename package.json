@@ -1,0 +1,36 @@
+{
+  "name": "@nwzx/hr-net-front-modal",
+  "version": "0.1.0",
+  "private": false,
+  "author": "NWZX",
+  "license": "MIT",
+  "description": "Modal component for hr-net-front",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/NWZX"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "rollup-plugin-import-css": "^3.0.3"
+  },
+  "scripts": {
+    "build": "tsx",
+    "rollup": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.13",
+    "rollup": "^2.75.6",
+    "rollup-plugin-dts": "^4.2.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.3"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
