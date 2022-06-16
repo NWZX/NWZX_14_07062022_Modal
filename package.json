@@ -1,6 +1,6 @@
 {
   "name": "@nwzx/hr-net-front-modal",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "author": "NWZX",
   "license": "MIT",
@@ -9,7 +9,8 @@
     "registry": "https://npm.pkg.github.com/NWZX"
   },
   "dependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "scripts": {
     "build": "tsx",
