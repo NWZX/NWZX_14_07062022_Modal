@@ -3,14 +3,22 @@ import './Modal.css';
 
 interface Props {
   children?: React.ReactNode;
+  className?: string;
   onClose?: () => void;
 }
 interface PropsModal extends Props {
   open?: boolean;
   title?: string;
+  className?: string;
+  u?: {
+    contentClassName?: string;
+    headerClassName?: string;
+    bodyClassName?: string;
+    footerClassName?: string;
+  }
 }
 
-const Modal: React.FC<PropsModal> = ({ children, open, onClose, title }) => {
+const Modal: React.FC<PropsModal> = ({ children, open, onClose, title, className, u }) => {
   const modalRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -28,10 +36,10 @@ const Modal: React.FC<PropsModal> = ({ children, open, onClose, title }) => {
   return (
     <div
       ref={modalRef}
-      className="cs-modal"
+      className={"cs-modal" + ` ${className || ''}`}
       style={{ display: open ? 'block' : 'none' }}
     >
-      <div className="cs-modal-content">
+      <div className={"cs-modal-content" + ` ${u?.contentClassName || ''}`}>
         <ModalHeader onClose={onClose}>{title}</ModalHeader>
         <ModalBody>{children}</ModalBody>
         <ModalFooter />
@@ -40,9 +48,9 @@ const Modal: React.FC<PropsModal> = ({ children, open, onClose, title }) => {
   );
 };
 
-const ModalHeader: React.FC<Props> = ({ children, onClose }) => {
+const ModalHeader: React.FC<Props> = ({ children, onClose, className }) => {
   return (
-    <div className="cs-modal-header">
+    <div className={"cs-modal-header" + ` ${className || ''}`}>
       <h2>{children}</h2>
       {/* Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.*/}
       <svg
@@ -56,11 +64,11 @@ const ModalHeader: React.FC<Props> = ({ children, onClose }) => {
     </div>
   );
 };
-const ModalBody: React.FC<Props> = ({ children }) => {
-  return children ? <div className="cs-modal-body">{children}</div> : null;
+const ModalBody: React.FC<Props> = ({ children, className }) => {
+  return children ? <div className={"cs-modal-body" + ` ${className || ''}`}>{children}</div> : null;
 };
-const ModalFooter: React.FC<Props> = ({ children }) => {
-  return children ? <div className="cs-modal-footer">{children}</div> : null;
+const ModalFooter: React.FC<Props> = ({ children, className }) => {
+  return children ? <div className={"cs-modal-footer" + ` ${className || ''}`}>{children}</div> : null;
 };
 
 export default Modal;
