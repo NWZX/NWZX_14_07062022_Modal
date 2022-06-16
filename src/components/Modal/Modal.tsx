@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './Modal.css';
 
 interface Props {
@@ -11,11 +11,11 @@ interface PropsModal extends Props {
 }
 
 const Modal: React.FC<PropsModal> = ({ children, open, onClose, title }) => {
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef = React.useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.onclick = function (event) {
-      if (modalRef?.current && event.target == modalRef?.current) {
+      if (modalRef && modalRef?.current && event.target == modalRef?.current) {
         onClose && onClose();
       }
     };

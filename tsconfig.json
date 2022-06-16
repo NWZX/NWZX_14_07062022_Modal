@@ -12,7 +12,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-    "baseUrl": "./src",
     "declarationDir": "./types",
     "outDir": "./dist"
   },
