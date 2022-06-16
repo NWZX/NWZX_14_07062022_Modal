@@ -63,4 +63,4 @@ const ModalFooter: React.FC<Props> = ({ children }) => {
   return children ? <div className="cs-modal-footer">{children}</div> : null;
 };
 
-export { Modal };
+export default Modal;
