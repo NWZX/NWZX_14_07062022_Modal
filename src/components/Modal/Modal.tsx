@@ -7,13 +7,21 @@ interface Props {
   onClose?: () => void;
 }
 interface PropsModal extends Props {
+  /** Change the modal State */
   open?: boolean;
+  /** Define the modal header title text */
   title?: string;
+  /** CSS className of modal container */
   className?: string;
+  /** CSS classNames of modal elements */
   styles?: {
+    /** CSS className of the modal  */
     contentClassName?: string;
+    /** CSS className of the modal header */
     headerClassName?: string;
+    /** CSS className of the modal children container */
     bodyClassName?: string;
+    /** CSS className of the modal footer */
     footerClassName?: string;
   }
 }
