@@ -10,6 +10,9 @@ This project is a front-end modal manager design for [hr-net-front](https://gith
 ## How to Use
 
 ```TSX
+import { Modal } from '@nwzx/hr-net-front-modal';
+
+
 const Demo:  React.FC<Props> = () => {
     // Toggle modal visibility
     const [isModalOpen, setIsModalOpen] = useState(false);
