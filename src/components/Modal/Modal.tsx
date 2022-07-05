@@ -10,7 +10,7 @@ interface PropsModal extends Props {
   open?: boolean;
   title?: string;
   className?: string;
-  u?: {
+  styles?: {
     contentClassName?: string;
     headerClassName?: string;
     bodyClassName?: string;
@@ -18,7 +18,14 @@ interface PropsModal extends Props {
   }
 }
 
-const Modal: React.FC<PropsModal> = ({ children, open, onClose, title, className, u }) => {
+const Modal: React.FC<PropsModal> = ({
+  children,
+  open,
+  onClose,
+  title,
+  className,
+  styles,
+}) => {
   const modalRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -36,13 +43,15 @@ const Modal: React.FC<PropsModal> = ({ children, open, onClose, title, className
   return (
     <div
       ref={modalRef}
-      className={"cs-modal" + ` ${className || ''}`}
+      className={'cs-modal' + ` ${className || ''}`}
       style={{ display: open ? 'block' : 'none' }}
     >
-      <div className={"cs-modal-content" + ` ${u?.contentClassName || ''}`}>
-        <ModalHeader onClose={onClose}>{title}</ModalHeader>
-        <ModalBody>{children}</ModalBody>
-        <ModalFooter />
+      <div
+        className={'cs-modal-content' + ` ${styles?.contentClassName || ''}`}
+      >
+        <ModalHeader onClose={onClose} className={styles?.headerClassName}>{title}</ModalHeader>
+        <ModalBody className={styles?.bodyClassName}>{children}</ModalBody>
+        <ModalFooter className={styles?.footerClassName} />
       </div>
     </div>
   );
