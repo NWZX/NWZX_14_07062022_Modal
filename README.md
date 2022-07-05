@@ -4,7 +4,7 @@ This project is a front-end modal manager design for [hr-net-front](https://gith
 
 ## How to Install
 ```bash
-    npm install @nwzx/hr-net-front-modal@0.2.3
+    npm install @nwzx/hr-net-front-modal@0.2.4
 ```	
 
 ## How to Use
